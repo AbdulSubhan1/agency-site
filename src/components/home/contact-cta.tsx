@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import type { Cta } from "@/brands/types";
 import { gsap, MOTION_OK, SplitText, useGSAP } from "@/lib/gsap";
-import { CtaLink } from "./cta-link";
+import { CtaLink } from "@/components/site/cta-link";
 
 /** The closing call to action: the headline lights up word by word as it scrolls into view. The forms come next. */
 export function ContactCta({

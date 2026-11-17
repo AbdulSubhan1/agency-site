@@ -79,3 +79,12 @@ body {
     animation: none;
   }
 }
+
+/* Fields and anchors scrolled into view (focus on an error, #links) stay clear of the fixed header */
+input,
+textarea,
+select,
+fieldset,
+[id] {
+  scroll-margin-top: 7rem;
+}
