@@ -1,0 +1,8 @@
+# Engineering highlights
+
+What this project does beyond "it works", and why.
+
+| Decision                                                                                                                | Why                                                                                                                                                                                                                                   | Where                               |
+| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| **One codebase, two brands, chosen at build time.** Each Vercel project sets `BRAND`; an unknown value fails the build. | Both brands share every page, form and fix, while each keeps its own tone, prices and look. Choosing at build time (not by hostname) keeps every page static and makes a wrong deploy fail loudly instead of showing the other brand. | `src/lib/brand.ts`, `brand.test.ts` |
+| **No database on the website.**                                                                                         | Leads belong in the CRM. The site holds no customer data and no database credentials, so a site breach exposes nothing.                                                                                                               | `AGENTS.md`                         |

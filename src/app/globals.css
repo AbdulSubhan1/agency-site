@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Placeholder tokens; each brand gets its own look in the design step (phase 3). */
+@theme {
+  --color-paper: #f7f7f4;
+  --color-ink: #141a1f;
+  --color-muted: #55606a;
+  --color-line: #dfe1dc;
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
