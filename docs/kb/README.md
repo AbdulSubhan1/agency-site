@@ -28,3 +28,13 @@ flowchart LR
   A[Advisors] --> C
   S -. page views, events .-> P[Pulse monitor]
 ```
+
+## Content
+
+| Folder                        | Holds                                                                                                              |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `src/content/services/`       | One file per service: what the client gets, our steps, timeline, outcome and prices per region (US, UAE, Pakistan) |
+| `src/content/products.ts`     | The five digital products, enquiry only for now                                                                    |
+| `src/brands/us.ts`, `asia.ts` | What each brand changes: tone, hero, CTAs, featured order, industries, currency, time zone, spelling and theme     |
+
+`siteContent(brand, region)` in `src/content/resolve.ts` merges the two into what a page shows.
