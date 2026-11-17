@@ -16,13 +16,14 @@ no database and keeps no customer data.
 
 ## Where things live
 
-| Folder         | What                                                                      |
-| -------------- | ------------------------------------------------------------------------- |
-| `src/app/`     | Routes only: pages, layouts, server actions                               |
-| `src/content/` | Shared content: services, products. Plain typed data, no UI               |
-| `src/brands/`  | Per-brand overrides: tone, hero, CTAs, order, industries, money, theme    |
-| `src/lib/`     | Small helpers: brand switch, formatting, the CRM client                   |
-| `docs/kb/`     | Knowledge base; every engineering decision goes in engineering-highlights |
+| Folder            | What                                                                              |
+| ----------------- | --------------------------------------------------------------------------------- |
+| `src/app/`        | Routes only: pages, layouts, server actions                                       |
+| `src/content/`    | Shared content: services, products, home page copy. Plain typed data, no UI       |
+| `src/components/` | Page sections, one folder per page (`home/`); animated ones are client components |
+| `src/brands/`     | Per-brand overrides: tone, hero, CTAs, order, industries, money, theme            |
+| `src/lib/`        | Small helpers: brand switch, formatting, the CRM client                           |
+| `docs/kb/`        | Knowledge base; every engineering decision goes in engineering-highlights         |
 
 ## Rules
 
@@ -36,6 +37,10 @@ no database and keeps no customer data.
 - **Demo data is made up.** No real client names, numbers or logos until a real, named project allows it, and every
   number shown on the site comes from a real project.
 - **Packages:** ask before adding one.
+- **Motion:** GSAP only, imported from `src/lib/gsap.ts`, inside `useGSAP` with a `gsap.matchMedia(MOTION_OK)`, so
+  "reduce motion" shows every section in its final state. Set animated start states from GSAP, not Tailwind scale
+  classes (Tailwind 4 uses the CSS `scale` property, which GSAP transforms don't override). Pin a section only where
+  its content fits the screen; on phones, play it when it scrolls into view instead.
 - TypeScript strict, no `any`. Comments say why, not what.
 
 ## Before you open a PR
