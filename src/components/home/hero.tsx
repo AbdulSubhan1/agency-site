@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import type { Cta, Showcase } from "@/brands/types";
 import { gsap, MOTION_OK, SplitText, useGSAP } from "@/lib/gsap";
-import { CtaLink } from "./cta-link";
+import { CtaLink } from "@/components/site/cta-link";
 import { HeroChat } from "./hero-chat";
 import { HeroGraph } from "./hero-graph";
 
