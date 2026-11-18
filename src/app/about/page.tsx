@@ -8,7 +8,7 @@ import { currentBrand } from "@/lib/brand";
 
 const copy = PAGES.about;
 
-export const metadata: Metadata = { title: "About us", description: copy.lead };
+export const metadata: Metadata = { title: "About us", description: copy.lead, alternates: { canonical: "/about" } };
 
 export default function AboutPage() {
   const { hero } = BRANDS[currentBrand()];

@@ -1,12 +1,13 @@
 import { ImageResponse } from "next/og";
 import { BRANDS } from "@/brands";
+import { BrandMark } from "@/components/site/brand-mark";
 import { currentBrand } from "@/lib/brand";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "AI automation for your business";
 
-/** The preview shown when a page is shared: the brand's dark hero colours, its name and its headline. */
+/** The preview shown when a page is shared: the brand's dark hero colours, its mark and name, and its headline. */
 export default function OpenGraphImage() {
   const brand = BRANDS[currentBrand()];
   const { theme } = brand;
@@ -23,7 +24,10 @@ export default function OpenGraphImage() {
         background: `radial-gradient(circle at 15% 20%, ${theme.glow}88, transparent 45%), radial-gradient(circle at 90% 10%, ${theme.accent}55, transparent 40%), ${theme.night}`,
       }}
     >
-      <div style={{ fontSize: 34, fontWeight: 700 }}>{brand.name}</div>
+      <div style={{ display: "flex", alignItems: "center", gap: 18, fontSize: 34, fontWeight: 700 }}>
+        <BrandMark brand={brand} size={56} />
+        {brand.name}
+      </div>
       <div style={{ fontSize: 68, fontWeight: 800, lineHeight: 1.05, letterSpacing: -2, maxWidth: 980 }}>
         {brand.hero.headline}
       </div>

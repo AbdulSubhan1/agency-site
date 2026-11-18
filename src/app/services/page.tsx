@@ -7,7 +7,7 @@ import { PAGES } from "@/content/pages";
 
 const copy = PAGES.services;
 
-export const metadata: Metadata = { title: copy.title, description: copy.lead };
+export const metadata: Metadata = { title: copy.title, description: copy.lead, alternates: { canonical: "/services" } };
 
 export default function ServicesPage() {
   const { services } = currentContent();
