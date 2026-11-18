@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { BRANDS } from "@/brands";
 import { ContactCta } from "@/components/home/contact-cta";
 import { Feed } from "@/components/home/feed";
@@ -5,19 +6,27 @@ import { Hero } from "@/components/home/hero";
 import { Marquee } from "@/components/home/marquee";
 import { Process } from "@/components/home/process";
 import { ServicesRail } from "@/components/home/services-rail";
+import { JsonLd } from "@/components/site/json-ld";
 import { StoryDay } from "@/components/home/story-day";
 import { StoryFlow } from "@/components/home/story-flow";
 import { HOME } from "@/content/home";
 import { siteContent } from "@/content/resolve";
 import { currentBrand } from "@/lib/brand";
+import { siteUrl } from "@/lib/site-url";
+import { graph, organization, website } from "@/lib/structured-data";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
   const brand = BRANDS[currentBrand()];
   const { region, services } = siteContent(brand, brand.defaultRegion);
   const { hero, showcase } = brand;
 
+  const base = siteUrl();
+
   return (
     <>
+      <JsonLd data={graph(organization(brand, base), website(brand, base))} />
       <Hero
         headline={hero.headline}
         subline={hero.subline}

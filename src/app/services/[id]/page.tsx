@@ -3,10 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Process } from "@/components/home/process";
 import { ctaClass } from "@/components/site/cta-link";
+import { JsonLd } from "@/components/site/json-ld";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal } from "@/components/site/reveal";
 import { currentContent } from "@/content/current";
 import { PAGES } from "@/content/pages";
+import { BRANDS } from "@/brands";
+import { currentBrand } from "@/lib/brand";
+import { siteUrl } from "@/lib/site-url";
+import { breadcrumbs, graph, service as serviceData } from "@/lib/structured-data";
 
 const copy = PAGES.services;
 
@@ -21,7 +26,9 @@ function find(id: string) {
 
 export async function generateMetadata({ params }: PageProps<"/services/[id]">): Promise<Metadata> {
   const service = find((await params).id);
-  return service ? { title: service.name, description: service.summary } : {};
+  return service
+    ? { title: service.name, description: service.summary, alternates: { canonical: `/services/${service.id}` } }
+    : {};
 }
 
 export default async function ServicePage({ params }: PageProps<"/services/[id]">) {
@@ -29,8 +36,22 @@ export default async function ServicePage({ params }: PageProps<"/services/[id]"
   if (!service) notFound();
   const others = currentContent().services.filter((s) => s.id !== service.id);
 
+  const base = siteUrl();
+  const structured = graph(
+    serviceData(BRANDS[currentBrand()], service, base),
+    breadcrumbs(
+      [
+        { name: "Home", path: "/" },
+        { name: copy.title, path: "/services" },
+        { name: service.name, path: `/services/${service.id}` },
+      ],
+      base,
+    ),
+  );
+
   return (
     <>
+      <JsonLd data={structured} />
       <PageHero title={service.name} lead={service.summary}>
         <dl className="mt-10 flex flex-wrap gap-3">
           <div className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 backdrop-blur">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Public_Sans, Schibsted_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { BRANDS } from "@/brands";
+import { BrandMark } from "@/components/site/brand-mark";
 import { ScrollRefresh } from "@/components/site/scroll-refresh";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
@@ -48,7 +49,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       style={vars}
     >
       <body className="flex min-h-full flex-col font-sans">
-        <SiteHeader name={brand.name} cta={{ ...hero.primary, label: HOME.headerCta[hero.primary.kind] }} />
+        <SiteHeader
+          name={brand.name}
+          mark={<BrandMark brand={brand} size={30} />}
+          cta={{ ...hero.primary, label: HOME.headerCta[hero.primary.kind] }}
+        />
         <main id="top" className="flex-1">
           {children}
         </main>

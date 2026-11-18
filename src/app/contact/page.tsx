@@ -12,7 +12,7 @@ import { bookingUrl } from "@/lib/env";
 
 const copy = PAGES.contact;
 
-export const metadata: Metadata = { title: "Contact", description: copy.lead };
+export const metadata: Metadata = { title: "Contact", description: copy.lead, alternates: { canonical: "/contact" } };
 
 export default function ContactPage({ searchParams }: PageProps<"/contact">) {
   return (

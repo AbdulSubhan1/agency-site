@@ -8,7 +8,7 @@ import { PAGES } from "@/content/pages";
 
 const copy = PAGES.products;
 
-export const metadata: Metadata = { title: copy.title, description: copy.lead };
+export const metadata: Metadata = { title: copy.title, description: copy.lead, alternates: { canonical: "/products" } };
 
 export default function ProductsPage() {
   const { products } = currentContent();
