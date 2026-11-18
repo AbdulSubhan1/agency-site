@@ -17,7 +17,7 @@ export type RegionSettings = {
 /** Everything that differs per brand. The shared content in src/content/ fills in the rest. */
 export type Brand = {
   id: BrandId;
-  /** Placeholder until the brand name is chosen. */
+  /** The brand name: titles, header, footer and the share image. */
   name: string;
   positioning: string;
   /** Notes for whoever writes copy for this brand. */
