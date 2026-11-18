@@ -2,7 +2,7 @@ import type { Brand } from "./types";
 
 export const asia: Brand = {
   id: "asia",
-  name: "Agency (Asia)",
+  name: "Devxonic",
   positioning:
     "We help businesses in the UAE and Pakistan streamline their processes with AI, on the channels their customers already use.",
   tone: "Warm and personal. Show the founders, local examples and prices in local currency. WhatsApp is the main channel.",

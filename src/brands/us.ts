@@ -2,7 +2,7 @@ import type { Brand } from "./types";
 
 export const us: Brand = {
   id: "us",
-  name: "Agency (US)",
+  name: "Radianzest",
   positioning: "We help US businesses streamline their processes with AI: fixed scope, fixed price, live in weeks.",
   tone: "Direct and outcome first. Short sentences, real numbers, no hype. Say what it costs and how long it takes.",
   hero: {
