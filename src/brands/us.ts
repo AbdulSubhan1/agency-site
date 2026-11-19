@@ -35,13 +35,14 @@ export const us: Brand = {
   },
   defaultRegion: "us",
   theme: {
-    brand: "#1f4fd1",
-    glow: "#5b8cff",
-    accent: "#f2b33d",
-    night: "#070d24",
-    paper: "#f5f7fb",
-    ink: "#0e1530",
-    display: "bricolage",
+    brand: "#7937f6",
+    glow: "#b48cff",
+    accent: "#ee7bf4",
+    night: "#140c28",
+    paper: "#fcfaff",
+    ink: "#241a33",
+    display: "sora",
+    text: "manrope",
   },
   showcase: {
     hero: {

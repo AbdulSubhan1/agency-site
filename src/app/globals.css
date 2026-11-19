@@ -69,6 +69,14 @@ body {
   border: 1px solid transparent;
 }
 
+/* SplitText wraps each headline line in a clipping mask the height of the line; with tight leading that cuts off
+   descenders (g, y), so the masks reach a little lower without moving the lines */
+[data-headline] > div,
+[data-title] > div {
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+
 .hatch {
   background: repeating-linear-gradient(-45deg, rgb(255 255 255 / 0.12) 0 6px, rgb(255 255 255 / 0.04) 6px 12px);
 }

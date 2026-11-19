@@ -42,13 +42,14 @@ export const asia: Brand = {
     },
   },
   theme: {
-    brand: "#0f6b5c",
-    glow: "#2fc4a7",
-    accent: "#e8a93c",
-    night: "#03201b",
-    paper: "#f2f7f5",
-    ink: "#0e2a24",
-    display: "schibsted",
+    brand: "#1248ff",
+    glow: "#6e8bff",
+    accent: "#a99bff",
+    night: "#080e23",
+    paper: "#f7f9fd",
+    ink: "#151b30",
+    display: "space-grotesk",
+    text: "inter",
   },
   showcase: {
     hero: {
