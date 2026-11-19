@@ -29,7 +29,10 @@ export type Brand = {
   defaultRegion: RegionId;
   /** Wording a brand changes for a service, e.g. "WhatsApp Assistant" instead of "AI Chat Assistant". */
   serviceOverrides?: Partial<Record<ServiceId, Partial<Pick<Service, "name" | "summary" | "outcome">>>>;
-  /** Visual identity. Colours become CSS variables on <html>; `night` is the dark hero and band colour. */
+  /**
+   * Visual identity. Colours become CSS variables on <html>; `night` is the dark hero and band colour. `accent` stays
+   * light enough for `ink` text on it (the primary buttons).
+   */
   theme: {
     brand: string;
     /** The brand colour where it sits on `night`: brighter, so it keeps its contrast. */
@@ -38,7 +41,10 @@ export type Brand = {
     night: string;
     paper: string;
     ink: string;
-    display: "bricolage" | "schibsted";
+    /** Headline face. */
+    display: "space-grotesk" | "sora";
+    /** Body and interface face. */
+    text: "inter" | "manrope";
   };
   /** The worked examples the home page animates. Businesses and numbers are made up and labelled as examples. */
   showcase: Showcase;

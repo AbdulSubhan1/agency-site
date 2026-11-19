@@ -11,7 +11,7 @@ import { CtaLink } from "./cta-link";
  * Floats over each page's dark top; once the page scrolls it becomes a frosted bar so it stays readable over any
  * section. On phones the links sit behind a Menu button.
  */
-export function SiteHeader({ name, mark, cta }: { name: string; mark: React.ReactNode; cta: Cta }) {
+export function SiteHeader({ logo, cta }: { logo: React.ReactNode; cta: Cta }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -32,9 +32,8 @@ export function SiteHeader({ name, mark, cta }: { name: string; mark: React.Reac
         }`}
       >
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight">
-            {mark}
-            {name}
+          <Link href="/" className="flex items-center">
+            {logo}
           </Link>
           <nav aria-label="Main" className="hidden gap-7 text-sm md:flex">
             {NAV.map((l) => (
