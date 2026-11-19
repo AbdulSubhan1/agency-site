@@ -14,6 +14,7 @@ export default async function OpenGraphImage() {
   const { theme } = brand;
   const { logo } = LOGOS[brand.id];
   const logoHeight = 64;
+  const src = await logoDataUrl(brand.id, "logo");
   return new ImageResponse(
     <div
       style={{
@@ -28,12 +29,7 @@ export default async function OpenGraphImage() {
       }}
     >
       <div style={{ display: "flex" }}>
-        <img
-          src={await logoDataUrl(brand.id, "logo")}
-          alt={brand.name}
-          height={logoHeight}
-          width={(logoHeight * logo.width) / logo.height}
-        />
+        <img src={src} alt={brand.name} height={logoHeight} width={(logoHeight * logo.width) / logo.height} />
       </div>
       <div style={{ fontSize: 68, fontWeight: 800, lineHeight: 1.05, letterSpacing: -2, maxWidth: 980 }}>
         {brand.hero.headline}

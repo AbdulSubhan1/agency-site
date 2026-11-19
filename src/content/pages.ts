@@ -126,6 +126,15 @@ export const PAGES = {
     text: "It may have moved. These pages will get you going again.",
     home: "Home page",
   },
+  shell: {
+    start: "Start a project",
+    services: "Services",
+    allServices: "All services",
+    company: "Company",
+    legal: "Legal",
+    menu: "Menu",
+    close: "Close",
+  },
   footer: {
     examples: "Examples on this site are illustrations, not client results.",
     privacy: "Privacy",
