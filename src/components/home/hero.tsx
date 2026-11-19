@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import type { Cta, Showcase } from "@/brands/types";
+import type { Cta } from "@/brands/types";
+import type { GraphVisual } from "@/content/examples";
 import { gsap, MOTION_OK, SplitText, useGSAP } from "@/lib/gsap";
 import { CtaLink } from "@/components/site/cta-link";
 import { HeroGraph } from "./hero-graph";
@@ -11,9 +12,9 @@ type Props = {
   subline: string;
   primary: Cta;
   secondary: Cta;
-  visual: Showcase["hero"];
+  visual: GraphVisual;
   /** Results shown as live toasts beside the graph. */
-  results: string[];
+  results: readonly string[];
 };
 
 /**

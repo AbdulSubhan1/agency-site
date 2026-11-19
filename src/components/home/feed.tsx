@@ -1,11 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import type { Showcase } from "@/brands/types";
+import type { FeedExample } from "@/content/examples";
 import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
 
 /** An example evening as a live log: each event drops in, then its result ticks green, and the tally counts up. */
-export function Feed({ title, text, feed }: { title: string; text: string; feed: Showcase["feed"] }) {
+export function Feed({ title, text, feed }: { title: string; text: string; feed: FeedExample }) {
   const ref = useRef<HTMLElement>(null);
 
   useGSAP(
