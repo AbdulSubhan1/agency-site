@@ -18,7 +18,7 @@ export const ctaClass = (variant: keyof typeof STYLE) =>
 /** A call to action as a pill link; every one is a Pulse event so clicks show up in the monitor. */
 export function CtaLink({ cta, variant, href }: { cta: Cta; variant: keyof typeof STYLE; href?: string }) {
   return (
-    <Link href={href ?? HREF[cta.kind]} data-pulse-event={`cta_${cta.kind}`} className={ctaClass(variant)}>
+    <Link href={href ?? cta.href ?? HREF[cta.kind]} data-pulse-event={`cta_${cta.kind}`} className={ctaClass(variant)}>
       {cta.label}
     </Link>
   );

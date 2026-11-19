@@ -6,7 +6,7 @@ import { currentBrand } from "@/lib/brand";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "AI automation for your business";
+export const alt = BRANDS[currentBrand()].tagline;
 
 /** The preview shown when a page is shared: the brand's dark hero colours, its logo and its headline. */
 export default async function OpenGraphImage() {

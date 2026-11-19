@@ -9,7 +9,11 @@ import { ServicesRail } from "@/components/home/services-rail";
 import { JsonLd } from "@/components/site/json-ld";
 import { StoryDay } from "@/components/home/story-day";
 import { StoryFlow } from "@/components/home/story-flow";
+import { CapabilityGrid, Faq, ProofBar, Team, Values } from "@/components/home/sections";
+import { TechStack } from "@/components/home/tech-stack";
 import { HOME } from "@/content/home";
+import { DEVXONIC_HOME } from "@/content/home-devxonic";
+import { PAGES } from "@/content/pages";
 import { siteContent } from "@/content/resolve";
 import { currentBrand } from "@/lib/brand";
 import { siteUrl } from "@/lib/site-url";
@@ -23,6 +27,33 @@ export default function Home() {
   const { hero, showcase } = brand;
 
   const base = siteUrl();
+
+  // DevXonic has its own page (brand masterplan section 12); the US brand keeps the automation page for now
+  if (brand.id === "asia") {
+    const d = DEVXONIC_HOME;
+    return (
+      <>
+        <JsonLd data={graph(organization(brand, base), website(brand, base))} />
+        <Hero
+          headline={hero.headline}
+          subline={hero.subline}
+          primary={hero.primary}
+          secondary={hero.secondary}
+          visual={showcase.hero}
+          results={[...d.heroEvents]}
+        />
+        <ProofBar title={d.proof.title} items={d.proof.items} />
+        <CapabilityGrid title={d.services.title} text={d.services.text} cta={d.services.cta} items={d.services.items} />
+        <Process title={d.process.title} steps={d.process.steps} tone="white" />
+        <TechStack title={d.stack.title} text={d.stack.text} all={d.stack.all} groups={d.stack.groups} />
+        {showcase.story.kind === "flow" && <StoryFlow story={showcase.story} />}
+        <Values title={d.values.title} items={d.values.items} />
+        <Team title={d.team.title} link={d.team.link} people={PAGES.about.people} />
+        <Faq title={d.faq.title} items={d.faq.items} />
+        <ContactCta title={d.cta.title} text={d.cta.text} primary={hero.primary} secondary={hero.secondary} />
+      </>
+    );
+  }
 
   return (
     <>
