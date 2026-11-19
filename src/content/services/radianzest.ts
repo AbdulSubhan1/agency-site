@@ -1,0 +1,121 @@
+import type { Service } from "../schema";
+
+// Radian Zest's services: a US digital growth and technology agency (brand masterplan, sections 3 and 19). No
+// promise of rankings, traffic or citations anywhere: the deliverables say what we do, the outcome what it is for.
+
+export const RADIANZEST_SERVICES: Service[] = [
+  {
+    id: "websites",
+    icon: "web",
+    name: "Website design and development",
+    summary: "A fast website that explains what you do and turns visitors into enquiries.",
+    brief: "Site map, design, build, launch checklist",
+    deliverables: [
+      "A site map and page plan built around what your buyers need to know",
+      "Design for phones first, then larger screens",
+      "A fast build you can update yourself",
+      "Forms wired to your inbox or CRM",
+      "A launch checklist: redirects, tracking, speed and search basics",
+    ],
+    outcome: "A website that does its job: clear to visitors, easy to find, and bringing in enquiries.",
+  },
+  {
+    id: "branding",
+    icon: "brand",
+    name: "Brand identity and creative design",
+    summary: "A look and voice people recognize, used the same way everywhere.",
+    brief: "Logo use, colors, type, brand guide",
+    deliverables: [
+      "Logo files for every use, light and dark",
+      "Colors, type and how to combine them",
+      "A short brand guide with dos and don'ts",
+      "Templates for social posts and documents",
+    ],
+    outcome: "A brand that looks the same on every screen, so people remember it.",
+  },
+  {
+    id: "seo",
+    icon: "search",
+    name: "SEO, AEO and GEO",
+    summary: "Pages search engines and AI answers can find, understand and quote.",
+    brief: "Technical audit, page fixes, structured data",
+    deliverables: [
+      "A technical audit: speed, indexing and broken pages",
+      "Titles, descriptions and headings that match what people search",
+      "Structured data that describes your business and services",
+      "Pages that answer buyer questions directly",
+      "Search Console set up and reviewed with you",
+    ],
+    outcome: "A site search engines and AI answers understand, so the right buyers can find you.",
+  },
+  {
+    id: "marketing",
+    icon: "megaphone",
+    name: "Digital marketing and content",
+    summary: "Content that answers your buyers' real questions, published on a plan.",
+    brief: "Content plan, articles, social posts",
+    deliverables: [
+      "A content plan built around your services and your buyers' questions",
+      "Articles and guides written with you, in your voice",
+      "Social posts that point back to them",
+      "A simple calendar so it keeps going",
+    ],
+    outcome: "Useful content that keeps working for you long after it is published.",
+  },
+  {
+    id: "conversion",
+    icon: "target",
+    name: "Conversion optimization",
+    summary: "More of your existing visitors becoming leads and customers.",
+    brief: "Conversion audit, form and page changes",
+    deliverables: [
+      "An audit of where visitors drop off, page by page",
+      "Clearer offers, calls to action and forms",
+      "Changes tested against how the page did before",
+      "A short report on what changed and what moved",
+    ],
+    outcome: "More enquiries from the visitors you already have.",
+  },
+  {
+    id: "automation",
+    icon: "flow",
+    name: "CRM and marketing automation",
+    summary: "Every lead answered fast, followed up, and tracked in one place.",
+    brief: "CRM setup, lead routing, follow-ups",
+    deliverables: [
+      "A CRM set up around how you sell",
+      "New leads routed to the right person straight away",
+      "Follow-up emails and reminders that run by themselves",
+      "A walkthrough with your team",
+    ],
+    outcome: "No lead forgotten, and every follow-up sent on time.",
+  },
+  {
+    id: "strategy",
+    icon: "compass",
+    name: "Digital growth strategy",
+    summary: "A clear plan for which channels to use first, and why.",
+    brief: "Channel plan, priorities, 90-day roadmap",
+    deliverables: [
+      "A look at where your customers come from today",
+      "The channels worth your time and budget first",
+      "A 90-day roadmap with owners and priorities",
+      "The few numbers to watch, and how to read them",
+    ],
+    outcome: "A growth plan you can act on, instead of trying everything at once.",
+  },
+  {
+    id: "reporting",
+    icon: "chart",
+    name: "Marketing technology and reporting",
+    summary: "Reports that show where leads come from and what they turn into.",
+    brief: "Tracking setup, dashboards, monthly review",
+    deliverables: [
+      "Tracking set up across your site, ads and CRM",
+      "A dashboard with the numbers that matter to you",
+      "A monthly review of what worked and what didn't",
+      "Privacy-friendly settings and consent where they are needed",
+    ],
+    outcome: "Marketing decisions made on real numbers, not guesses.",
+  },
+];

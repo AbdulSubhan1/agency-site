@@ -22,28 +22,13 @@ export const asia: Brand = {
   regions: {
     ae: {
       label: "United Arab Emirates",
-      currency: "AED",
       timeZone: "Asia/Dubai",
       industries: ["Real estate", "Clinics", "Restaurants", "Online stores", "Travel agencies"],
-      featured: ["audit", "workflows", "chat-agent", "lead-response", "crm", "documents", "content", "website"],
-      products: ["speed-to-lead-starter", "workflow-bundles", "assistant-kits", "prompt-libraries"],
     },
     pk: {
       label: "Pakistan",
-      currency: "PKR",
       timeZone: "Asia/Karachi",
       industries: ["Online sellers", "Real estate", "Academies", "Clinics"],
-      featured: ["audit", "workflows", "chat-agent", "crm", "lead-response", "website"],
-      products: ["cod-confirmation", "speed-to-lead-starter", "workflow-bundles"],
-    },
-  },
-  defaultRegion: "ae",
-  // WhatsApp only allows business-specific assistants, so the Asia brand names it after the channel and the business
-  serviceOverrides: {
-    "chat-agent": {
-      name: "WhatsApp Business Assistant",
-      summary:
-        "Your own assistant on WhatsApp and your website, trained on your business, with your team one tap away.",
     },
   },
   theme: {

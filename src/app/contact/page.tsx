@@ -5,8 +5,6 @@ import { PageHero } from "@/components/site/page-hero";
 import { BRANDS } from "@/brands";
 import { currentContent } from "@/content/current";
 import { PAGES } from "@/content/pages";
-import { PRODUCTS } from "@/content/products";
-import { PRODUCT_IDS, type ProductId } from "@/content/schema";
 import { currentBrand } from "@/lib/brand";
 import { bookingUrl } from "@/lib/env";
 
@@ -32,7 +30,7 @@ export default function ContactPage({ searchParams }: PageProps<"/contact">) {
             </div>
           ))}
         </div>
-        {/* The query (?service= or ?product=) is only known per request, so the form renders inside Suspense */}
+        {/* The query (?service=) is only known per request, so the form renders inside Suspense */}
         <Suspense fallback={<div className="min-h-[32rem] rounded-3xl bg-white ring-1 ring-line" />}>
           <ContactForm searchParams={searchParams} />
         </Suspense>
@@ -47,12 +45,9 @@ async function ContactForm({ searchParams }: { searchParams: PageProps<"/contact
   const params = await searchParams;
   const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
-  // Arriving from a service or a kit pre-picks the matching service; a kit also starts the message
-  const product = PRODUCT_IDS.includes(one(params.product) as ProductId)
-    ? PRODUCTS[one(params.product) as ProductId]
-    : undefined;
+  // Arriving from a service page pre-picks that service
   const asked = one(params.service);
-  const service = services.some((s) => s.id === asked) ? asked : product?.upsell;
+  const service = services.some((s) => s.id === asked) ? asked : undefined;
 
   return (
     <LeadForm
@@ -61,7 +56,7 @@ async function ContactForm({ searchParams }: { searchParams: PageProps<"/contact
         ...services.map((s) => ({ value: s.id, label: s.name })),
         { value: "not-sure", label: "Not sure yet" },
       ]}
-      initial={{ service, message: product ? `I'm interested in the ${product.name}.` : undefined }}
+      initial={{ service }}
       bookingUrl={bookingUrl()}
     />
   );

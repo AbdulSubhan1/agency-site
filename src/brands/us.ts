@@ -22,24 +22,10 @@ export const us: Brand = {
   regions: {
     us: {
       label: "United States",
-      currency: "USD",
       timeZone: "America/New_York",
       industries: ["Home services", "Real estate", "Law firms", "Online stores", "Marketing agencies"],
-      featured: [
-        "audit",
-        "workflows",
-        "lead-response",
-        "chat-agent",
-        "crm",
-        "documents",
-        "voice",
-        "content",
-        "website",
-      ],
-      products: ["speed-to-lead-starter", "workflow-bundles", "assistant-kits", "prompt-libraries"],
     },
   },
-  defaultRegion: "us",
   theme: {
     brand: "#0a7c71",
     glow: "#2ad4c2",

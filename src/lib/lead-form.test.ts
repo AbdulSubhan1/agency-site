@@ -15,7 +15,7 @@ describe("normalizePhone", () => {
 });
 
 const us = {
-  service: "workflows",
+  service: "automation",
   budgetBand: "1k_5k",
   timeline: "asap",
   name: "Jordan Ellis",
@@ -49,7 +49,7 @@ const asia = {
   callingCode: "+971",
   name: "Fatima Noor",
   whatsappOptIn: "on",
-  service: "chat-agent",
+  service: "web-apps",
   timeline: "asap",
 };
 

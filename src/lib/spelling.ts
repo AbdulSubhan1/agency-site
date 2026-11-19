@@ -5,6 +5,7 @@ export const US_TO_UK: Record<string, string> = {
   analyzed: "analysed",
   center: "centre",
   color: "colour",
+  colors: "colours",
   customize: "customise",
   customized: "customised",
   favorite: "favourite",

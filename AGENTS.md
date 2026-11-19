@@ -19,9 +19,9 @@ no database and keeps no customer data.
 | Folder            | What                                                                              |
 | ----------------- | --------------------------------------------------------------------------------- |
 | `src/app/`        | Routes only: pages, layouts, server actions                                       |
-| `src/content/`    | Shared content: services, products, home page copy. Plain typed data, no UI       |
+| `src/content/`    | Content: each brand's services and home page copy. Plain typed data, no UI        |
 | `src/components/` | Page sections, one folder per page (`home/`); animated ones are client components |
-| `src/brands/`     | Per-brand overrides: tone, hero, CTAs, order, industries, money, theme            |
+| `src/brands/`     | Per-brand settings: tone, hero, CTAs, regions, industries, theme                  |
 | `src/lib/`        | Small helpers: brand switch, formatting, the CRM client                           |
 | `docs/kb/`        | Knowledge base; every engineering decision goes in engineering-highlights         |
 

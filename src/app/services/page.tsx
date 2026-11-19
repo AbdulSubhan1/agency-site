@@ -25,10 +25,7 @@ export default function ServicesPage() {
             <h2 className="font-display text-2xl leading-tight font-bold text-ink">{s.name}</h2>
             <p className="mt-3 text-muted">{s.summary}</p>
             <div className="mt-auto flex items-end justify-between gap-4 pt-8">
-              <div>
-                <p className="font-semibold text-brand">{s.price.free ? "Free" : s.price.setup}</p>
-                {s.price.monthly && <p className="text-sm text-muted">+ {s.price.monthly}</p>}
-              </div>
+              <p className="text-sm text-ink/80">{s.brief}</p>
               <span
                 aria-hidden
                 className="grid size-11 shrink-0 place-items-center rounded-full bg-ink/5 text-ink transition-colors duration-150 ease-ui group-hover:bg-brand group-hover:text-white"

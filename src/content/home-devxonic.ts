@@ -2,7 +2,6 @@
 // work or what we build; nothing here claims a client, a result or a number we can't show. "Selected work" and
 // "Insights" wait until there are real projects and articles to put in them.
 
-import type { Capability } from "./capability";
 import type { FlowStory, GraphVisual } from "./examples";
 
 export const DEVXONIC_HOME = {
@@ -37,64 +36,6 @@ export const DEVXONIC_HOME = {
     title: "What we build",
     text: "One engineering partner. Every major capability your product needs.",
     cta: "Talk to us about your project",
-    items: [
-      {
-        id: "custom-software",
-        icon: "code",
-        name: "Custom software and SaaS",
-        outcome: "Software shaped around how your business works, not the other way round.",
-        deliverables: "Product scope, working releases, source code",
-      },
-      {
-        id: "web-apps",
-        icon: "web",
-        name: "Web applications",
-        outcome: "Fast, secure web apps your customers and your team can rely on.",
-        deliverables: "Responsive app, admin tools, hosting setup",
-      },
-      {
-        id: "mobile-apps",
-        icon: "mobile",
-        name: "Mobile applications",
-        outcome: "Apps for your customers, or for your team out in the field.",
-        deliverables: "iOS and Android builds, release checklist",
-      },
-      {
-        id: "product-design",
-        icon: "design",
-        name: "Product UI and UX",
-        outcome: "Screens people understand the first time they use them.",
-        deliverables: "User flows, design system, clickable prototype",
-      },
-      {
-        id: "ai",
-        icon: "ai",
-        name: "AI and intelligent systems",
-        outcome: "AI that reads documents, answers questions and drafts work, with a person in control.",
-        deliverables: "Model choice, prompts and checks, safe fallbacks",
-      },
-      {
-        id: "automation",
-        icon: "flow",
-        name: "Automation and CRM systems",
-        outcome: "Repetitive work handled automatically, and every customer in one place.",
-        deliverables: "Workflows, CRM setup, team walkthrough",
-      },
-      {
-        id: "integrations",
-        icon: "plug",
-        name: "API integrations",
-        outcome: "Your tools exchanging data reliably, without copy and paste.",
-        deliverables: "Integration plan, connectors, error alerts",
-      },
-      {
-        id: "devops",
-        icon: "cloud",
-        name: "DevOps and infrastructure",
-        outcome: "Deployments, monitoring and backups that keep things running.",
-        deliverables: "Deploy pipeline, monitoring, backup plan",
-      },
-    ] satisfies Capability[],
   },
   process: {
     title: "From requirements to reliable systems",

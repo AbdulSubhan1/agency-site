@@ -1,8 +1,8 @@
 # Agency site knowledge base
 
-The public website of a two-person AI automation agency. It sells services (an automation audit, workflow
-automation, AI chat agents and more) and a few digital products, and sends every enquiry to the agency CRM. There is
-no checkout on the site.
+The public websites of a two-person agency, from one codebase: DevXonic (a full-service software company) and Radian
+Zest (a US digital growth and technology agency). Each brand shows its own eight services and sends every enquiry to
+the agency CRM. Prices are quoted after a short call; there is no checkout on the site.
 
 Pages in this folder:
 
@@ -31,10 +31,9 @@ flowchart LR
 
 ## Content
 
-| Folder                        | Holds                                                                                                              |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `src/content/services/`       | One file per service: what the client gets, our steps, timeline, outcome and prices per region (US, UAE, Pakistan) |
-| `src/content/products.ts`     | The five digital products, enquiry only for now                                                                    |
-| `src/brands/us.ts`, `asia.ts` | What each brand changes: tone, hero, CTAs, featured order, industries, currency, time zone, spelling and theme     |
+| Folder                        | Holds                                                                                                    |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `src/content/services/`       | Each brand's eight services: summary, deliverables and outcome (`devxonic.ts`, `radianzest.ts`)          |
+| `src/brands/us.ts`, `asia.ts` | What each brand sets: name, tone, hero, CTAs, regions (label, time zone, industries), spelling and theme |
 
 `siteContent(brand, region)` in `src/content/resolve.ts` merges the two into what a page shows.
