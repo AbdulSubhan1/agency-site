@@ -13,6 +13,10 @@ export const asia: Brand = {
     primary: { label: "Chat with us on WhatsApp", kind: "whatsapp" },
     secondary: { label: "Book a free process review", kind: "book-call" },
   },
+  close: {
+    headline: "Tell us what you are building.",
+    text: "We will start with the scope, not the sales pitch.",
+  },
   locale: "en-GB",
   regions: {
     ae: {

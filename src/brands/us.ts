@@ -12,6 +12,10 @@ export const us: Brand = {
     primary: { label: "Book a free 20-minute call", kind: "book-call" },
     secondary: { label: "See what we automate", kind: "enquiry" },
   },
+  close: {
+    headline: "Ready to make your digital presence work harder?",
+    text: "Tell us about your goals. You talk to the people who would build it.",
+  },
   locale: "en-US",
   regions: {
     us: {

@@ -3,7 +3,6 @@
 export const HOME = {
   marquee: "Built for",
   /** Short labels for the header button, where the hero's full CTA text doesn't fit. */
-  headerCta: { "book-call": "Book a call", whatsapp: "WhatsApp us", enquiry: "Get in touch" },
   feed: {
     title: "While you're off the clock",
     text: "Every enquiry, order and follow-up is handled the moment it arrives. You check the results in the morning.",

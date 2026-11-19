@@ -23,6 +23,8 @@ export type Brand = {
   /** Notes for whoever writes copy for this brand. */
   tone: string;
   hero: { headline: string; subline: string; primary: Cta; secondary: Cta };
+  /** The footer's closing call to action, on pages that don't end with their own. */
+  close: { headline: string; text: string };
   /** Number and date formatting, e.g. "en-US"; also picks the spelling (en-GB = UK). */
   locale: "en-US" | "en-GB";
   regions: Partial<Record<RegionId, RegionSettings>>;

@@ -15,6 +15,7 @@ export default async function AppleIcon() {
   const brand = BRANDS[currentBrand()];
   const { symbol } = LOGOS[brand.id];
   const h = 112;
+  const src = await logoDataUrl(brand.id, "symbol");
   return new ImageResponse(
     <div
       style={{
@@ -26,7 +27,7 @@ export default async function AppleIcon() {
         background: brand.theme.night,
       }}
     >
-      <img src={await logoDataUrl(brand.id, "symbol")} alt="" height={h} width={(h * symbol.width) / symbol.height} />
+      <img src={src} alt="" height={h} width={(h * symbol.width) / symbol.height} />
     </div>,
     size,
   );

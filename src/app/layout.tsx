@@ -6,7 +6,7 @@ import { BrandLogo } from "@/components/site/brand-mark";
 import { ScrollRefresh } from "@/components/site/scroll-refresh";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
-import { HOME } from "@/content/home";
+import { currentContent } from "@/content/current";
 import { currentBrand } from "@/lib/brand";
 import { PULSE_URL } from "@/lib/pulse";
 import { siteUrl } from "@/lib/site-url";
@@ -32,7 +32,8 @@ export function generateMetadata(): Metadata {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   const brand = BRANDS[currentBrand()];
-  const { theme, hero } = brand;
+  const { theme } = brand;
+  const services = currentContent().services.map(({ id, name, summary }) => ({ id, name, summary }));
   // Pulse (github.com/AbdulSubhan1/monitor) needs each site registered with its live URL, so it's off until set
   const pulseProject = process.env.NEXT_PUBLIC_PULSE_PROJECT?.trim();
   // The brand's colours become CSS variables, so globals.css and every component read one source
@@ -51,14 +52,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       style={vars}
     >
       <body className="flex min-h-full flex-col font-sans">
-        <SiteHeader
-          logo={<BrandLogo brand={brand} height={brand.id === "asia" ? 34 : 28} />}
-          cta={{ ...hero.primary, label: HOME.headerCta[hero.primary.kind] }}
-        />
+        <SiteHeader logo={<BrandLogo brand={brand} height={brand.id === "asia" ? 34 : 28} />} services={services} />
         <main id="top" className="flex-1">
           {children}
         </main>
-        <SiteFooter logo={<BrandLogo brand={brand} height={brand.id === "asia" ? 44 : 36} />} />
+        <SiteFooter
+          logo={<BrandLogo brand={brand} height={brand.id === "asia" ? 44 : 36} />}
+          name={brand.name}
+          positioning={brand.positioning}
+          services={services}
+          close={brand.close}
+        />
         <ScrollRefresh />
         {pulseProject && (
           <Script src={`${PULSE_URL}/beacon.js`} data-project={pulseProject} strategy="afterInteractive" />
