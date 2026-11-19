@@ -2,7 +2,6 @@
 
 export const NAV = [
   { href: "/services", label: "Services" },
-  { href: "/products", label: "Ready-made kits" },
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -10,43 +9,37 @@ export const NAV = [
 export const PAGES = {
   services: {
     title: "Services",
-    lead: "Each service has a fixed scope, a clear price and a timeline before we start. You own everything we build.",
-    from: "From",
+    lead: "Every project starts with a short call, then a written scope and a fixed price. You own everything we build.",
     timeline: "Timeline",
+    timelineValue: "Agreed in your written scope",
     deliverables: "What you get",
     steps: "How we do it",
     outcome: "The result",
     price: "Price",
+    priceValue: "Custom quote after a short call",
     cta: "Ask about this",
     all: "All services",
   },
-  products: {
-    title: "Ready-made kits",
-    lead: "Workflows, assistants and prompt libraries we have already built, ready to adapt to your business. Ask and we send the details.",
-    free: "Free",
-    delivery: "How you get it",
-    cta: "Ask about this kit",
-  },
   about: {
     title: "Who you talk to",
-    lead: "A small team of two. The people who map your process are the people who build the automation, and they stay your contact after launch.",
+    lead: "A small team of two. The people who scope your project are the people who build it, and they stay your contact after launch.",
     people: [
       {
         name: "Abdul Subhan",
         initials: "AS",
         role: "Engineering",
-        text: "Builds the automations, the integrations between your apps and the systems behind them.",
+        text: "Builds the software, the integrations between your tools and the systems behind them.",
       },
       {
         name: "Osama",
         initials: "O",
         role: "Client work",
-        text: "Runs the process reviews with you and your team, and stays your contact after launch.",
+        text: "Runs the first calls and project reviews with you, and stays your contact after launch.",
       },
     ],
     principles: [
       {
-        title: "Your accounts, your workflows",
+        title: "Your accounts, your code",
         text: "We build on your own tools and accounts, so nothing stops working if we part ways.",
       },
       {
@@ -55,25 +48,25 @@ export const PAGES = {
       },
       {
         title: "Plain answers",
-        text: "If automation won't pay back for a task, we say so, even if it means a smaller project.",
+        text: "If something won't pay back for your business, we say so, even if it means a smaller project.",
       },
     ],
   },
   contact: {
-    title: "Tell us what slows your team down",
+    title: "Tell us what you need",
     lead: "We reply within one working day. No sales script: you talk to the people who would build it.",
     next: [
       {
         title: "You tell us the problem",
-        text: "A few lines are enough: what takes your team too long, or what slips through.",
+        text: "A few lines are enough: what you want to build or improve, and why now.",
       },
       {
         title: "We reply within a working day",
-        text: "With questions, or a time for a short call to see how the work moves today.",
+        text: "With questions, or a time for a short call to understand your goals.",
       },
       {
         title: "You get a plan and a price",
-        text: "What to automate first, what it costs and how long it takes. No obligation.",
+        text: "What we would do first, what it costs and how long it takes. No obligation.",
       },
     ],
   },

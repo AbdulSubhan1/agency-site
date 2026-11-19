@@ -2,7 +2,6 @@
 // it claims nothing we can't show: featured stories, the work showcase, testimonials and insights wait until there
 // are real projects, reviews and articles.
 
-import type { Capability } from "./capability";
 import type { FeedExample } from "./examples";
 
 export const RADIANZEST_HOME = {
@@ -33,64 +32,6 @@ export const RADIANZEST_HOME = {
     title: "What we can do for your business",
     text: "The right creative and technical services, working together.",
     cta: "Talk to us about your goals",
-    items: [
-      {
-        id: "websites",
-        icon: "web",
-        name: "Website design and development",
-        outcome: "A fast website that explains what you do and turns visitors into enquiries.",
-        deliverables: "Site map, design, build, launch checklist",
-      },
-      {
-        id: "branding",
-        icon: "brand",
-        name: "Brand identity and creative design",
-        outcome: "A look and voice people recognize, used the same way everywhere.",
-        deliverables: "Logo use, colors, type, brand guide",
-      },
-      {
-        id: "seo",
-        icon: "search",
-        name: "SEO, AEO and GEO",
-        outcome: "Pages search engines and AI answers can find, understand and quote.",
-        deliverables: "Technical audit, page fixes, structured data",
-      },
-      {
-        id: "marketing",
-        icon: "megaphone",
-        name: "Digital marketing and content",
-        outcome: "Content that answers your buyers' real questions, published on a plan.",
-        deliverables: "Content plan, articles, social posts",
-      },
-      {
-        id: "conversion",
-        icon: "target",
-        name: "Conversion optimization",
-        outcome: "More of your existing visitors becoming leads and customers.",
-        deliverables: "Conversion audit, form and page changes",
-      },
-      {
-        id: "automation",
-        icon: "flow",
-        name: "CRM and marketing automation",
-        outcome: "Every lead answered fast, followed up, and tracked in one place.",
-        deliverables: "CRM setup, lead routing, follow-ups",
-      },
-      {
-        id: "strategy",
-        icon: "compass",
-        name: "Digital growth strategy",
-        outcome: "A clear plan for which channels to use first, and why.",
-        deliverables: "Channel plan, priorities, 90-day roadmap",
-      },
-      {
-        id: "reporting",
-        icon: "chart",
-        name: "Marketing technology and reporting",
-        outcome: "Reports that show where leads come from and what they turn into.",
-        deliverables: "Tracking setup, dashboards, monthly review",
-      },
-    ] satisfies Capability[],
   },
   process: {
     title: "Strategy and craft, working together",

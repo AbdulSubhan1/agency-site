@@ -1,4 +1,5 @@
 import type { Brand } from "@/brands/types";
+import { siteContent } from "@/content/resolve";
 import { RADIANZEST_HOME as r } from "@/content/home-radianzest";
 import { ContactCta } from "./contact-cta";
 import { EditorialHero } from "./editorial-hero";
@@ -9,6 +10,7 @@ import { CapabilityGrid, Faq, ProofBar, Visibility } from "./sections";
 /** Radian Zest, a US digital growth and technology agency (brand masterplan, section 13). */
 export function RadianzestHome({ brand }: { brand: Brand }) {
   const { hero } = brand;
+  const { services } = siteContent(brand);
   return (
     <>
       <EditorialHero
@@ -18,7 +20,7 @@ export function RadianzestHome({ brand }: { brand: Brand }) {
         secondary={hero.secondary}
       />
       <ProofBar title={r.proof.title} items={r.proof.items} />
-      <CapabilityGrid title={r.services.title} text={r.services.text} cta={r.services.cta} items={r.services.items} />
+      <CapabilityGrid title={r.services.title} text={r.services.text} cta={r.services.cta} services={services} />
       <Process title={r.process.title} steps={r.process.steps} tone="white" />
       <Visibility
         title={r.visibility.title}

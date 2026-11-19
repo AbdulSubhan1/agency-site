@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Capability } from "@/content/capability";
+import type { Service } from "@/content/schema";
 import { ctaClass } from "@/components/site/cta-link";
 
 // Plain sections for the brand home pages: no scroll animation of their own, so the animated ones around them
@@ -28,7 +28,7 @@ export function ProofBar({ title, items }: { title: string; items: readonly Item
   );
 }
 
-const ICONS: Record<Capability["icon"], string> = {
+const ICONS: Record<Service["icon"], string> = {
   code: "M8 7l-5 5 5 5M16 7l5 5-5 5",
   web: "M3 5h18v14H3zM3 9h18M6 7h.01M9 7h.01",
   mobile: "M8 2h8a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM11 18h2",
@@ -45,17 +45,17 @@ const ICONS: Record<Capability["icon"], string> = {
   chart: "M5 20v-8M12 20V5M19 20v-5M3 20h18",
 };
 
-/** Every capability with the same weight: what it does for you and what you receive. */
+/** Every service with the same weight: what it does for you and what you receive, each opening its own page. */
 export function CapabilityGrid({
   title,
   text,
   cta,
-  items,
+  services,
 }: {
   title: string;
   text: string;
   cta: string;
-  items: readonly Capability[];
+  services: readonly Pick<Service, "id" | "icon" | "name" | "summary" | "brief">[];
 }) {
   return (
     <section id="services" className="scroll-mt-24 bg-paper py-24 md:py-32">
@@ -63,21 +63,28 @@ export function CapabilityGrid({
         <h2 className={`${H2} text-ink`}>{title}</h2>
         <p className="mt-4 max-w-xl text-lg text-muted">{text}</p>
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((s) => (
-            <li key={s.id} className="flex flex-col rounded-[20px] bg-white p-6 ring-1 ring-line">
-              <svg viewBox="0 0 24 24" className="size-9 text-brand" aria-hidden="true">
-                <path
-                  d={ICONS[s.icon]}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <h3 className="mt-5 font-display text-xl leading-tight font-semibold text-ink">{s.name}</h3>
-              <p className="mt-2 text-muted">{s.outcome}</p>
-              <p className="mt-auto pt-5 text-sm text-ink/80">{s.deliverables}</p>
+          {services.map((s) => (
+            <li key={s.id} className="flex">
+              <Link
+                href={`/services/${s.id}`}
+                data-pulse-event="service_opened"
+                data-pulse-label={s.id}
+                className="flex w-full flex-col rounded-[20px] bg-white p-6 ring-1 ring-line transition-shadow duration-150 ease-ui hover:ring-brand/40 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
+              >
+                <svg viewBox="0 0 24 24" className="size-9 text-brand" aria-hidden="true">
+                  <path
+                    d={ICONS[s.icon]}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <h3 className="mt-5 font-display text-xl leading-tight font-semibold text-ink">{s.name}</h3>
+                <p className="mt-2 text-muted">{s.summary}</p>
+                <p className="mt-auto pt-5 text-sm text-ink/80">{s.brief}</p>
+              </Link>
             </li>
           ))}
         </ul>

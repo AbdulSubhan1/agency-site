@@ -33,7 +33,8 @@ export async function generateMetadata({ params }: PageProps<"/services/[id]">):
 export default async function ServicePage({ params }: PageProps<"/services/[id]">) {
   const service = find((await params).id);
   if (!service) notFound();
-  const others = currentContent().services.filter((s) => s.id !== service.id);
+  const { services, steps } = currentContent();
+  const others = services.filter((s) => s.id !== service.id);
 
   const base = siteUrl();
   const structured = graph(
@@ -55,17 +56,13 @@ export default async function ServicePage({ params }: PageProps<"/services/[id]"
         <dl className="mt-10 flex flex-wrap gap-3">
           <div className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 backdrop-blur">
             <dt className="text-xs text-mist">{copy.price}</dt>
-            <dd className="font-semibold text-accent">
-              {service.price.free ? "Free" : service.price.setup}
-              {service.price.monthly && <span className="text-white/80"> + {service.price.monthly}</span>}
-            </dd>
+            <dd className="font-semibold text-accent">{copy.priceValue}</dd>
           </div>
           <div className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 backdrop-blur">
             <dt className="text-xs text-mist">{copy.timeline}</dt>
-            <dd className="font-semibold">{service.timeline}</dd>
+            <dd className="font-semibold">{copy.timelineValue}</dd>
           </div>
         </dl>
-        {service.price.note && <p className="mt-3 text-sm text-mist">{service.price.note}</p>}
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
@@ -93,7 +90,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[id]"
         </div>
       </section>
 
-      <Process title={copy.steps} steps={service.steps.map((s) => ({ title: s.title, detail: s.detail }))} />
+      <Process title={copy.steps} steps={steps} />
 
       <section className="relative isolate overflow-hidden bg-night px-5 py-24 text-white md:px-8 md:py-32">
         <div aria-hidden className="aurora absolute -inset-[30%] -z-10 opacity-40" />

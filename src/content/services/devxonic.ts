@@ -1,0 +1,120 @@
+import type { Service } from "../schema";
+
+// DevXonic's services: a full-service software company (brand masterplan, sections 3 and 19). Written in US
+// spelling like all content; the brand's en-GB locale swaps it at render time.
+
+export const DEVXONIC_SERVICES: Service[] = [
+  {
+    id: "custom-software",
+    icon: "code",
+    name: "Custom software and SaaS",
+    summary: "Software shaped around how your business works, not the other way round.",
+    brief: "Product scope, working releases, source code",
+    deliverables: [
+      "A written scope: what we build first, what comes later and what it costs",
+      "Working releases you can use and test as we go",
+      "The full source code in your own repository",
+      "Hosting, monitoring and backups set up on your accounts",
+      "A handover guide so another developer can pick it up",
+    ],
+    outcome: "Software that fits your business, that you own outright and can keep growing.",
+  },
+  {
+    id: "web-apps",
+    icon: "web",
+    name: "Web applications",
+    summary: "Fast, secure web apps your customers and your team can rely on.",
+    brief: "Responsive app, admin tools, hosting setup",
+    deliverables: [
+      "A web app that works on phones, tablets and desktops",
+      "Admin screens for your team to manage the data",
+      "Sign-in, roles and permissions where you need them",
+      "Hosting, a custom domain and monitoring on your accounts",
+    ],
+    outcome: "One app your customers and your team use every day, without workarounds.",
+  },
+  {
+    id: "mobile-apps",
+    icon: "mobile",
+    name: "Mobile applications",
+    summary: "Apps for your customers, or for your team out in the field.",
+    brief: "iOS and Android builds, release checklist",
+    deliverables: [
+      "iOS and Android builds from one plan",
+      "Screens designed for one-handed, on-the-go use",
+      "Connection to your existing systems and data",
+      "Help with the app store listings and release",
+    ],
+    outcome: "An app people keep on their phone because it saves them time.",
+  },
+  {
+    id: "product-design",
+    icon: "design",
+    name: "Product UI and UX",
+    summary: "Screens people understand the first time they use them.",
+    brief: "User flows, design system, clickable prototype",
+    deliverables: [
+      "User flows for the main tasks, agreed with you",
+      "A clickable prototype to try before anything is built",
+      "A design system: colors, type, components and their states",
+      "Designs ready for developers, including empty and error states",
+    ],
+    outcome: "A product that feels obvious to use, so fewer people get stuck or give up.",
+  },
+  {
+    id: "ai",
+    icon: "ai",
+    name: "AI and intelligent systems",
+    summary: "AI that reads documents, answers questions and drafts work, with a person in control.",
+    brief: "Model choice, prompts and checks, safe fallbacks",
+    deliverables: [
+      "A short study of where AI helps in your work, and where it doesn't",
+      "The model and setup that fit your data and budget",
+      "Checks on the answers, with a person approving what matters",
+      "A safe fallback when the AI is unsure",
+    ],
+    outcome: "AI that does real work in your business, and knows when to hand over to a person.",
+  },
+  {
+    id: "automation",
+    icon: "flow",
+    name: "Automation and CRM systems",
+    summary: "Repetitive work handled automatically, and every customer in one place.",
+    brief: "Workflows, CRM setup, team walkthrough",
+    deliverables: [
+      "The repetitive tasks mapped and automated between your apps",
+      "A CRM set up around how you sell and follow up",
+      "Alerts when something fails, so nothing goes unnoticed",
+      "A walkthrough with your team and a short guide for each workflow",
+    ],
+    outcome: "Hours back every week, and no customer lost between two spreadsheets.",
+  },
+  {
+    id: "integrations",
+    icon: "plug",
+    name: "API integrations",
+    summary: "Your tools exchanging data reliably, without copy and paste.",
+    brief: "Integration plan, connectors, error alerts",
+    deliverables: [
+      "A plan of which systems talk to which, and what data moves",
+      "Connectors built on each tool's official API",
+      "Retries and error alerts when a system is down",
+      "Notes on every connection for whoever maintains it next",
+    ],
+    outcome: "Data entered once and correct everywhere it is needed.",
+  },
+  {
+    id: "devops",
+    icon: "cloud",
+    name: "DevOps and infrastructure",
+    summary: "Deployments, monitoring and backups that keep things running.",
+    brief: "Deploy pipeline, monitoring, backup plan",
+    deliverables: [
+      "Automatic tests and deploys on every change",
+      "Monitoring and alerts for errors and downtime",
+      "Backups, and a tested way to restore them",
+      "Secrets and access kept out of the code",
+    ],
+    outcome: "Releases without drama, and problems spotted before your customers notice.",
+  },
+];

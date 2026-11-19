@@ -13,7 +13,27 @@ const securityHeaders = [
     : []),
 ];
 
+// Pages from before the rebrand (2026-11-19): the kits page and the old AI automation services. Links to them out in
+// the world land on the services list instead of a 404.
+const OLD_SERVICES = [
+  "audit",
+  "workflows",
+  "lead-response",
+  "chat-agent",
+  "voice",
+  "crm",
+  "documents",
+  "website",
+  "content",
+];
+
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      { source: "/products", destination: "/services", permanent: true },
+      ...OLD_SERVICES.map((id) => ({ source: `/services/${id}`, destination: "/services", permanent: true })),
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
