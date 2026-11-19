@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ctaClass } from "@/components/site/cta-link";
 import { PageHero } from "@/components/site/page-hero";
 import { NAV, PAGES } from "@/content/pages";
+
+export const metadata: Metadata = { title: PAGES.notFound.metaTitle };
 
 export default function NotFound() {
   return (

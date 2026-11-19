@@ -82,6 +82,8 @@ export const PAGES = {
   },
   privacy: {
     title: "Privacy",
+    description:
+      "What we collect when you send an enquiry, what we use it for, how long we keep it and how to have it erased.",
     updated: "Last updated 17 November 2026",
     sections: [
       {
@@ -108,6 +110,7 @@ export const PAGES = {
   },
   terms: {
     title: "Terms",
+    description: "The terms for using this website, and how prices and project agreements work.",
     updated: "Last updated 19 November 2026",
     sections: [
       {
@@ -125,6 +128,7 @@ export const PAGES = {
     ],
   },
   notFound: {
+    metaTitle: "Page not found",
     title: "This page doesn't exist",
     text: "It may have moved. These pages will get you going again.",
     home: "Home page",
