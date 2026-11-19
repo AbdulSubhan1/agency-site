@@ -94,7 +94,7 @@ export function SiteHeader({ logo, services }: { logo: React.ReactNode; services
   return (
     <header ref={headerRef} onKeyDown={trapFocus} className="fixed inset-x-0 top-0 z-50 px-3 pt-3">
       <div
-        className={`relative z-10 mx-auto max-w-6xl rounded-[1.6rem] px-4 py-2 text-white transition-all duration-500 md:px-5 ${
+        className={`relative z-10 mx-auto max-w-6xl rounded-[1.6rem] px-4 py-2 text-white transition-[background-color,box-shadow] duration-200 ease-ui md:px-5 ${
           solid
             ? "bg-night/95 shadow-lg ring-1 ring-white/10 supports-[backdrop-filter:blur(0)]:bg-night/70 supports-[backdrop-filter:blur(0)]:backdrop-blur-xl"
             : "bg-transparent"
@@ -124,7 +124,7 @@ export function SiteHeader({ logo, services }: { logo: React.ReactNode; services
                       height="10"
                       viewBox="0 0 10 10"
                       aria-hidden="true"
-                      className={`transition-transform duration-300 ${panelOpen ? "rotate-180" : ""}`}
+                      className={`transition-transform duration-200 ease-ui ${panelOpen ? "rotate-180" : ""}`}
                     >
                       <path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
                     </svg>

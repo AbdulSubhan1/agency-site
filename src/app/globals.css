@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Strong ease-out for interface motion (Emil Kowalski's curve): starts fast, so a press or hover answers at once */
+@theme {
+  --ease-ui: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
 /* The brand's colours arrive as CSS variables from the root layout (src/brands/<brand>.ts -> theme). */
 @theme inline {
   --color-brand: var(--brand);
@@ -13,6 +18,10 @@
   --color-mist: color-mix(in oklab, white 68%, var(--night));
   --font-sans: var(--ff-text), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--ff-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {

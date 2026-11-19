@@ -5,7 +5,7 @@ import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
 
 type Step = { title: string; detail: string };
 
-/** The steps of a project. A line fills down through them as you scroll, lighting each step as it passes. */
+/** The steps of a project. A line fills down through them as you scroll; the steps themselves stay still and readable. */
 export function Process({
   title,
   steps,
@@ -28,21 +28,6 @@ export function Process({
           ease: "none",
           scrollTrigger: { trigger: "[data-steps]", start: "top 65%", end: "bottom 55%", scrub: 0.5 },
         });
-        gsap.utils.toArray<HTMLElement>("[data-pstep]").forEach((step) => {
-          gsap.from(step, {
-            opacity: 0.25,
-            x: 30,
-            duration: 0.6,
-            ease: "power3.out",
-            scrollTrigger: { trigger: step, start: "top 62%", toggleActions: "play none none reverse" },
-          });
-          gsap.from(step.querySelector("[data-dot]"), {
-            backgroundColor: "var(--paper)",
-            color: "var(--ink)",
-            duration: 0.3,
-            scrollTrigger: { trigger: step, start: "top 62%", toggleActions: "play none none reverse" },
-          });
-        });
       });
       return () => mm.revert();
     },
@@ -60,11 +45,8 @@ export function Process({
             <span data-fill className="block size-full origin-top bg-brand" />
           </span>
           {steps.map((s, i) => (
-            <li key={s.title} data-pstep className="relative grid grid-cols-[2.75rem_1fr] gap-5">
-              <span
-                data-dot
-                className="relative grid size-11 place-items-center rounded-full border-2 border-brand bg-brand font-display text-lg font-bold text-white"
-              >
+            <li key={s.title} className="relative grid grid-cols-[2.75rem_1fr] gap-5">
+              <span className="relative grid size-11 place-items-center rounded-full border-2 border-brand bg-brand font-display text-lg font-bold text-white">
                 {i + 1}
               </span>
               <div>
