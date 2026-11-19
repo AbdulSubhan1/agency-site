@@ -4,7 +4,6 @@ import { useRef } from "react";
 import type { Cta, Showcase } from "@/brands/types";
 import { gsap, MOTION_OK, SplitText, useGSAP } from "@/lib/gsap";
 import { CtaLink } from "@/components/site/cta-link";
-import { HeroChat } from "./hero-chat";
 import { HeroGraph } from "./hero-graph";
 
 type Props = {
@@ -72,11 +71,7 @@ export function Hero({ headline, subline, primary, secondary, visual, results }:
           </div>
         </div>
         <div data-visual className="relative">
-          {visual.kind === "graph" ? (
-            <HeroGraph hub={visual.hub} nodes={visual.nodes} results={results} />
-          ) : (
-            <HeroChat chat={visual.chat} />
-          )}
+          <HeroGraph hub={visual.hub} nodes={visual.nodes} results={results} />
         </div>
       </div>
     </section>

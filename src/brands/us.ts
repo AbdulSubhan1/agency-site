@@ -4,6 +4,7 @@ export const us: Brand = {
   id: "us",
   name: "Radianzest",
   positioning: "We help US businesses streamline their processes with AI: fixed scope, fixed price, live in weeks.",
+  tagline: "AI automation for your business",
   tone: "Direct and outcome first. Short sentences, real numbers, no hype. Say what it costs and how long it takes.",
   hero: {
     headline: "Streamline your business with AI, without hiring an AI team",

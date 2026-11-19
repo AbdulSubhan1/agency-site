@@ -1,7 +1,8 @@
 import type { BrandId } from "@/lib/brand";
 import type { ProductId, RegionId, Service, ServiceId } from "@/content/schema";
 
-export type Cta = { label: string; kind: "book-call" | "whatsapp" | "enquiry" };
+/** `href` overrides where the kind would send the visitor, e.g. to a section of the same page. */
+export type Cta = { label: string; kind: "book-call" | "whatsapp" | "enquiry"; href?: string };
 
 export type RegionSettings = {
   label: string;
@@ -20,6 +21,8 @@ export type Brand = {
   /** The brand name: titles, header, footer and the share image. */
   name: string;
   positioning: string;
+  /** What the brand does in a few words: the home page title and the share image's alt text. */
+  tagline: string;
   /** Notes for whoever writes copy for this brand. */
   tone: string;
   hero: { headline: string; subline: string; primary: Cta; secondary: Cta };
@@ -53,19 +56,12 @@ export type Brand = {
 };
 
 export type Showcase = {
-  /** Hero visual: apps joined to the business with work flowing between them, or a customer chat. */
-  hero: { kind: "graph"; hub: string; nodes: string[] } | { kind: "chat"; chat: Chat };
+  /** Hero visual: the parts of a system joined to the middle, with work flowing between them. */
+  hero: { kind: "graph"; hub: string; nodes: string[] };
   /** One evening at an example business, as a live feed. */
   feed: { title: string; rows: { time: string; event: string; result: string }[]; done: string };
   /** Where the hours go, before and after: a workday bar or one order's steps. */
   story: DayStory | FlowStory;
-};
-
-export type Chat = {
-  business: string;
-  status: string;
-  caption: string;
-  messages: { from: "them" | "us"; text: string; time: string; options?: string[] }[];
 };
 
 export type DayStory = {

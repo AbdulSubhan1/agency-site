@@ -5,8 +5,17 @@ import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
 
 type Step = { title: string; detail: string };
 
-/** The three steps of a project. A line fills down through them as you scroll, lighting each step as it passes. */
-export function Process({ title, steps }: { title: string; steps: readonly Step[] }) {
+/** The steps of a project. A line fills down through them as you scroll, lighting each step as it passes. */
+export function Process({
+  title,
+  steps,
+  tone = "paper",
+}: {
+  title: string;
+  steps: readonly Step[];
+  /** The section's background, so it can sit next to another light section. */
+  tone?: "paper" | "white";
+}) {
   const ref = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -41,7 +50,7 @@ export function Process({ title, steps }: { title: string; steps: readonly Step[
   );
 
   return (
-    <section id="how" ref={ref} className="bg-paper py-24 md:py-32">
+    <section id="how" ref={ref} className={`${tone === "white" ? "bg-white" : "bg-paper"} py-24 md:py-32`}>
       <div className="mx-auto grid max-w-6xl gap-12 px-5 md:px-8 lg:grid-cols-[0.8fr_1.2fr]">
         <h2 className="font-display text-[clamp(2.2rem,5vw,3.8rem)] leading-[1.02] font-bold tracking-[-0.03em] text-ink lg:sticky lg:top-32 lg:self-start">
           {title}

@@ -4,14 +4,15 @@ export const asia: Brand = {
   id: "asia",
   name: "Devxonic",
   positioning:
-    "We help businesses in the UAE and Pakistan streamline their processes with AI, on the channels their customers already use.",
-  tone: "Warm and personal. Show the founders, local examples and prices in local currency. WhatsApp is the main channel.",
+    "We design, engineer and improve software products, applications and business systems for organisations around the world.",
+  tagline: "Custom software development",
+  tone: "Technically confident, precise and professional. Outcome first, then the technical detail; no unexplained jargon. International English.",
   hero: {
-    headline: "Run your business smoothly with AI, on WhatsApp and beyond",
+    headline: "Build software that moves your business forward",
     subline:
-      "We map where your team loses time, then automate it: replies, orders, follow-ups and admin. You talk to the people who build it.",
-    primary: { label: "Chat with us on WhatsApp", kind: "whatsapp" },
-    secondary: { label: "Book a free process review", kind: "book-call" },
+      "From custom web and mobile applications to SaaS platforms, integrations and AI workflows, we engineer products around real business needs.",
+    primary: { label: "Start a project", kind: "book-call" },
+    secondary: { label: "See what we build", kind: "enquiry", href: "#services" },
   },
   close: {
     headline: "Tell us what you are building.",
@@ -57,29 +58,9 @@ export const asia: Brand = {
   },
   showcase: {
     hero: {
-      kind: "chat",
-      chat: {
-        business: "Example: a dental clinic in Dubai",
-        status: "Assistant, replies instantly",
-        caption: "Booked before midnight, with nobody at reception.",
-        messages: [
-          { from: "them", text: "Hi, do you do teeth whitening? How much?", time: "11:48 pm" },
-          {
-            from: "us",
-            text: "Yes, we do. In-clinic whitening is AED 1,200 and takes about an hour. Would you like to book a visit?",
-            time: "11:48 pm",
-          },
-          { from: "them", text: "Yes, this weekend if possible", time: "11:49 pm" },
-          {
-            from: "us",
-            text: "These times are free with Dr Sara:",
-            time: "11:49 pm",
-            options: ["Sat 10:30", "Sat 4:00", "Sun 11:00"],
-          },
-          { from: "them", text: "Sat 10:30 please", time: "11:50 pm" },
-          { from: "us", text: "Booked. You'll get a reminder the day before. See you Saturday!", time: "11:50 pm" },
-        ],
-      },
+      kind: "graph",
+      hub: "Your product",
+      nodes: ["Web app", "Mobile app", "APIs", "Database", "AI models", "Cloud"],
     },
     feed: {
       title: "Example: an online store in Lahore, one evening",

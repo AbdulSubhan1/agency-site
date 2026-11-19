@@ -24,7 +24,7 @@ export function generateMetadata(): Metadata {
   const brand = BRANDS[currentBrand()];
   return {
     metadataBase: siteUrl(),
-    title: { default: `${brand.name}: AI automation for your business`, template: `%s | ${brand.name}` },
+    title: { default: `${brand.name}: ${brand.tagline}`, template: `%s | ${brand.name}` },
     description: brand.positioning,
     openGraph: { siteName: brand.name, type: "website", locale: brand.locale.replace("-", "_") },
   };
