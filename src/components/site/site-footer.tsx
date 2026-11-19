@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV, PAGES } from "@/content/pages";
+import { COMPANY_LINKS, PAGES } from "@/content/pages";
 import { FooterCta } from "./footer-cta";
 import type { NavService } from "./site-header";
 
@@ -15,7 +15,6 @@ const linkClass = "inline-flex min-h-11 items-center hover:text-white md:min-h-9
 
 /** A closing call to action, then every service, the company pages and the legal pages. */
 export function SiteFooter({ logo, name, positioning, services, close }: Props) {
-  const company = NAV.filter((l) => l.href !== "/services");
   return (
     <footer className="bg-night text-sm text-mist">
       <FooterCta headline={close.headline} text={close.text} />
@@ -41,7 +40,7 @@ export function SiteFooter({ logo, name, positioning, services, close }: Props) 
         <nav aria-label={PAGES.shell.company}>
           <h2 className="font-display font-semibold text-white">{PAGES.shell.company}</h2>
           <ul className="mt-3">
-            {company.map((l) => (
+            {COMPANY_LINKS.map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className={linkClass}>
                   {l.label}

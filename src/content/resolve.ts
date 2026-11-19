@@ -1,5 +1,6 @@
 import type { Brand } from "@/brands/types";
 import { spell } from "@/lib/spelling";
+import { COMPANY } from "./company";
 import { DEVXONIC_HOME } from "./home-devxonic";
 import { RADIANZEST_HOME } from "./home-radianzest";
 import { SERVICES } from "./services";
@@ -14,8 +15,16 @@ function spellAll<T>(value: T, locale: Brand["locale"]): T {
   return value;
 }
 
-/** What one brand shows: its services in its own order and spelling, and the project steps its pages walk through. */
+/**
+ * What one brand shows: its services in its own order and spelling, the project steps its pages walk through, and the
+ * Process, Capabilities and FAQ pages.
+ */
 export function siteContent(brand: Brand) {
   const process = brand.id === "asia" ? DEVXONIC_HOME.process : RADIANZEST_HOME.process;
-  return { brand, services: spellAll(SERVICES[brand.id], brand.locale), steps: process.steps };
+  return {
+    brand,
+    services: spellAll(SERVICES[brand.id], brand.locale),
+    steps: process.steps,
+    company: spellAll(COMPANY[brand.id], brand.locale),
+  };
 }

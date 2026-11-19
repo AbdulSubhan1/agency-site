@@ -31,9 +31,10 @@ flowchart LR
 
 ## Content
 
-| Folder                        | Holds                                                                                                    |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `src/content/services/`       | Each brand's eight services: summary, deliverables and outcome (`devxonic.ts`, `radianzest.ts`)          |
-| `src/brands/us.ts`, `asia.ts` | What each brand sets: name, tone, hero, CTAs, regions (label, time zone, industries), spelling and theme |
+| Folder                        | Holds                                                                                                       |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `src/content/services/`       | Each brand's eight services: summary, deliverables and outcome (`devxonic.ts`, `radianzest.ts`)             |
+| `src/brands/us.ts`, `asia.ts` | What each brand sets: name, tone, hero, CTAs, regions (label, time zone, industries), spelling and theme    |
+| `src/content/company.ts`      | Each brand's Process, Capabilities and FAQ pages; steps, practices and FAQ answers reuse the home page copy |
 
 `siteContent(brand, region)` in `src/content/resolve.ts` merges the two into what a page shows.
