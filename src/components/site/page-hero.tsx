@@ -14,9 +14,9 @@ export function PageHero({ title, lead, children }: { title: string; lead?: stri
           type: "words,lines",
           mask: "lines",
           autoSplit: true,
-          onSplit: (self) => gsap.from(self.words, { yPercent: 110, duration: 0.4, ease: "power3.out", stagger: 0.03 }),
+          onSplit: (self) => gsap.from(self.words, { yPercent: 110, duration: 0.8, ease: "power4.out", stagger: 0.05 }),
         });
-        gsap.from("[data-rise]", { y: 12, opacity: 0, duration: 0.4, delay: 0.15, ease: "power3.out", stagger: 0.06 });
+        gsap.from("[data-rise]", { y: 20, opacity: 0, duration: 0.7, delay: 0.35, ease: "power3.out", stagger: 0.1 });
       });
       return () => mm.revert();
     },

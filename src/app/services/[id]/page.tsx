@@ -5,6 +5,7 @@ import { Process } from "@/components/home/process";
 import { ctaClass } from "@/components/site/cta-link";
 import { JsonLd } from "@/components/site/json-ld";
 import { PageHero } from "@/components/site/page-hero";
+import { Reveal } from "@/components/site/reveal";
 import { currentContent } from "@/content/current";
 import { PAGES } from "@/content/pages";
 import { BRANDS } from "@/brands";
@@ -72,9 +73,9 @@ export default async function ServicePage({ params }: PageProps<"/services/[id]"
         <h2 className="font-display text-[clamp(2rem,4.5vw,3.2rem)] leading-[1.05] font-bold tracking-[-0.03em] text-ink">
           {copy.deliverables}
         </h2>
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <Reveal className="mt-10 grid gap-4 md:grid-cols-2">
           {service.deliverables.map((d) => (
-            <div key={d} className="flex gap-4 rounded-2xl bg-white p-6 ring-1 ring-line">
+            <div key={d} data-reveal className="flex gap-4 rounded-2xl bg-white p-6 ring-1 ring-line">
               <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand text-white">
                 <svg viewBox="0 0 16 16" className="size-4" aria-hidden>
                   <path
@@ -90,19 +91,24 @@ export default async function ServicePage({ params }: PageProps<"/services/[id]"
               <p className="text-lg text-ink">{d}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       <Process title={copy.steps} steps={service.steps.map((s) => ({ title: s.title, detail: s.detail }))} />
 
       <section className="relative isolate overflow-hidden bg-night px-5 py-24 text-white md:px-8 md:py-32">
         <div aria-hidden className="aurora absolute -inset-[30%] -z-10 opacity-40" />
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-medium text-mist">{copy.outcome}</p>
-          <p className="mt-4 font-display text-[clamp(1.8rem,4vw,3rem)] leading-[1.1] font-bold tracking-tight text-balance">
+        <Reveal className="mx-auto max-w-4xl text-center">
+          <p data-reveal className="text-sm font-medium text-mist">
+            {copy.outcome}
+          </p>
+          <p
+            data-reveal
+            className="mt-4 font-display text-[clamp(1.8rem,4vw,3rem)] leading-[1.1] font-bold tracking-tight text-balance"
+          >
             {service.outcome}
           </p>
-          <div className="mt-10">
+          <div data-reveal className="mt-10">
             <Link
               href={`/contact?service=${service.id}`}
               data-pulse-event="service_enquiry"
@@ -112,7 +118,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[id]"
               {copy.cta}
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <nav aria-label={copy.all} className="mx-auto max-w-6xl px-5 py-16 md:px-8">

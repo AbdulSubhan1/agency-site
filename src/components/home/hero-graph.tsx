@@ -41,13 +41,12 @@ export function HeroGraph({
       const mm = gsap.matchMedia();
       mm.add(MOTION_OK, () => {
         gsap.from("[data-node]", {
-          scale: 0.9,
+          scale: 0,
           opacity: 0,
           transformOrigin: "50% 50%",
-          duration: 0.5,
-          stagger: 0.06,
+          stagger: 0.08,
           delay: 0.7,
-          ease: "power3.out",
+          ease: "back.out(2)",
         });
         gsap.from("[data-link]", {
           strokeDashoffset: 400,
@@ -70,6 +69,7 @@ export function HeroGraph({
             },
           );
         });
+        gsap.to("[data-ring]", { rotate: 360, duration: 30, repeat: -1, ease: "none", transformOrigin: "50% 50%" });
 
         const toasts = gsap.utils.toArray<HTMLElement>("[data-toast]");
         const tl = gsap.timeline({ repeat: -1, delay: 1.8 });
@@ -78,7 +78,7 @@ export function HeroGraph({
             t,
             { y: 16, opacity: 0, scale: 0.96 },
             { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" },
-          ).to(t, { y: -12, opacity: 0, duration: 0.3, ease: "power3.out" }, "+=2");
+          ).to(t, { y: -12, opacity: 0, duration: 0.4, ease: "power2.in" }, "+=2");
         });
       });
       return () => mm.revert();
@@ -137,7 +137,16 @@ export function HeroGraph({
             />
           </g>
         ))}
-        <circle cx={CX} cy={CY} r="96" fill="none" stroke="white" strokeOpacity="0.22" strokeDasharray="2 10" />
+        <circle
+          data-ring
+          cx={CX}
+          cy={CY}
+          r="96"
+          fill="none"
+          stroke="white"
+          strokeOpacity="0.22"
+          strokeDasharray="2 10"
+        />
         <circle cx={CX} cy={CY} r="120" fill="var(--glow)" opacity="0.08" />
         <circle cx={CX} cy={CY} r="70" fill="url(#hub)" />
         <text x={CX} y={CY + 6} textAnchor="middle" className="fill-white font-display text-[19px] font-bold">

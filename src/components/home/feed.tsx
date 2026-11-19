@@ -20,7 +20,7 @@ export function Feed({ title, text, feed }: { title: string; text: string; feed:
           tl.from(row, { opacity: 0, x: 30, duration: 0.45, ease: "power3.out" }, i === 0 ? "-=0.3" : "+=0.15")
             .from(
               row.querySelector("[data-result]"),
-              { opacity: 0, scale: 0.95, duration: 0.25, ease: "power3.out" },
+              { opacity: 0, scale: 0.8, duration: 0.35, ease: "back.out(2)" },
               "+=0.2",
             )
             .to(
@@ -28,6 +28,14 @@ export function Feed({ title, text, feed }: { title: string; text: string; feed:
               { v: i + 1, duration: 0.2, onUpdate: () => void (out.textContent = String(Math.round(tally.v))) },
               "<",
             );
+        });
+        gsap.from("[data-feed-copy] > *", {
+          y: 30,
+          opacity: 0,
+          stagger: 0.12,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: { trigger: ref.current, start: "top 70%" },
         });
       });
       return () => mm.revert();
@@ -38,7 +46,7 @@ export function Feed({ title, text, feed }: { title: string; text: string; feed:
   return (
     <section ref={ref} className="bg-paper py-24 md:py-32">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div>
+        <div data-feed-copy>
           <h2 className="font-display text-[clamp(2.2rem,5vw,3.8rem)] leading-[1.02] font-bold tracking-[-0.03em] text-ink">
             {title}
           </h2>
@@ -51,7 +59,10 @@ export function Feed({ title, text, feed }: { title: string; text: string; feed:
           <div className="flex items-center justify-between gap-3 border-b border-line px-5 py-4">
             <p className="text-sm font-semibold text-ink">{feed.title}</p>
             <span className="flex shrink-0 items-center gap-2 text-xs font-semibold text-brand">
-              <span className="size-2 rounded-full bg-brand" />
+              <span className="relative flex size-2">
+                <span className="absolute inset-0 animate-ping rounded-full bg-brand opacity-60 motion-reduce:animate-none" />
+                <span className="relative size-2 rounded-full bg-brand" />
+              </span>
               Running
             </span>
           </div>

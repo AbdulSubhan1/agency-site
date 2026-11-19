@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Inter, Manrope, Sora, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { BRANDS } from "@/brands";
@@ -19,11 +19,6 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--ff-text", display: "s
 
 const DISPLAY = { "space-grotesk": spaceGrotesk, sora };
 const TEXT = { inter, manrope };
-
-/** The phone's status bar takes the brand's dark colour, so it runs into the dark header. */
-export function generateViewport(): Viewport {
-  return { themeColor: BRANDS[currentBrand()].theme.night };
-}
 
 export function generateMetadata(): Metadata {
   const brand = BRANDS[currentBrand()];
