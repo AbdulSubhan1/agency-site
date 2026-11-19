@@ -28,7 +28,6 @@ export default async function OpenGraphImage() {
       }}
     >
       <div style={{ display: "flex" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element -- next/og draws plain img only */}
         <img
           src={await logoDataUrl(brand.id, "logo")}
           alt={brand.name}

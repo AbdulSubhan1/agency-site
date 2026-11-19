@@ -26,7 +26,6 @@ export default async function AppleIcon() {
         background: brand.theme.night,
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element -- next/og draws plain img only */}
       <img src={await logoDataUrl(brand.id, "symbol")} alt="" height={h} width={(h * symbol.width) / symbol.height} />
     </div>,
     size,
