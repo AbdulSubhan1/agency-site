@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
 import { currentContent } from "@/content/current";
-import { NAV } from "@/content/pages";
+import { COMPANY_LINKS } from "@/content/pages";
 import { siteUrl } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteUrl();
   const paths = [
     "/",
-    ...NAV.map((l) => l.href),
+    "/services",
+    ...COMPANY_LINKS.map((l) => l.href),
     ...currentContent().services.map((s) => `/services/${s.id}`),
     "/privacy",
     "/terms",

@@ -2,9 +2,14 @@
 
 export const NAV = [
   { href: "/services", label: "Services" },
+  { href: "/process", label: "Process" },
+  { href: "/capabilities", label: "Capabilities" },
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+/** The footer's company column: the main pages after Services, and the FAQ. */
+export const COMPANY_LINKS = [...NAV.filter((l) => l.href !== "/services"), { href: "/faq", label: "FAQ" }] as const;
 
 export const PAGES = {
   services: {
@@ -70,6 +75,11 @@ export const PAGES = {
       },
     ],
   },
+  process: {
+    promises: "What you can count on",
+    more: "Still have questions?",
+    faq: "Read the answers to common ones",
+  },
   privacy: {
     title: "Privacy",
     updated: "Last updated 17 November 2026",
@@ -98,11 +108,11 @@ export const PAGES = {
   },
   terms: {
     title: "Terms",
-    updated: "Last updated 17 November 2026",
+    updated: "Last updated 19 November 2026",
     sections: [
       {
         title: "This website",
-        text: "This site describes our services and lets you send us an enquiry. Prices shown are starting points; your quote is confirmed in writing before any work starts.",
+        text: "This site describes our services and lets you send us an enquiry. Every price is given in a written quote, confirmed before any work starts.",
       },
       {
         title: "Examples",
@@ -128,6 +138,7 @@ export const PAGES = {
     menu: "Menu",
     close: "Close",
   },
+  legal: { contents: "On this page" },
   footer: {
     examples: "Examples on this site are illustrations, not client results.",
     privacy: "Privacy",

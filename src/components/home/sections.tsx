@@ -15,7 +15,7 @@ export function ProofBar({ title, items }: { title: string; items: readonly Item
     <section className="border-t border-white/10 bg-night py-16 text-white md:py-20">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">{title}</h2>
-        <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className={`mt-8 grid gap-8 sm:grid-cols-2 ${items.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {items.map((i) => (
             <li key={i.title} className="border-l-2 border-glow pl-5">
               <h3 className="font-display text-lg font-semibold">{i.title}</h3>
