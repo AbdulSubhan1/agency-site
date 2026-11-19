@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Capability } from "@/content/home-devxonic";
+import type { Capability } from "@/content/capability";
 import { ctaClass } from "@/components/site/cta-link";
 
 // Plain sections for the brand home pages: no scroll animation of their own, so the animated ones around them
@@ -37,6 +37,12 @@ const ICONS: Record<Capability["icon"], string> = {
   flow: "M4 5h6v4H4zM14 15h6v4h-6zM7 9v4a3 3 0 0 0 3 3h4",
   plug: "M9 3v5M15 3v5M7 8h10v3a5 5 0 0 1-10 0zM12 16v5",
   cloud: "M7 18a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 17 8.5 4.75 4.75 0 0 1 17.5 18z",
+  brand: "M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z",
+  search: "M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4",
+  megaphone: "M4 10v4h3l7 4V6l-7 4zM18 9a4 4 0 0 1 0 6",
+  target: "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2z",
+  compass: "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM15.5 8.5l-2 5-5 2 2-5z",
+  chart: "M5 20v-8M12 20V5M19 20v-5M3 20h18",
 };
 
 /** Every capability with the same weight: what it does for you and what you receive. */
@@ -78,6 +84,44 @@ export function CapabilityGrid({
         <Link href="/contact" data-pulse-event="cta_capabilities" className={`mt-10 ${ctaClass("solid")}`}>
           {cta}
         </Link>
+      </div>
+    </section>
+  );
+}
+
+/** What search and AI-answer work covers, and the honest limit on what anyone can promise. */
+export function Visibility({
+  title,
+  text,
+  items,
+  note,
+}: {
+  title: string;
+  text: string;
+  items: readonly string[];
+  note: string;
+}) {
+  return (
+    <section className="relative isolate overflow-hidden bg-night py-24 text-white md:py-32">
+      <div aria-hidden className="grid-lines absolute inset-0 -z-10" />
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 md:px-8 lg:grid-cols-[1fr_1fr]">
+        <div>
+          <h2 className={H2}>{title}</h2>
+          <p className="mt-5 max-w-md text-lg text-mist">{text}</p>
+        </div>
+        <div>
+          <ul className="grid gap-3">
+            {items.map((item) => (
+              <li key={item} className="flex gap-3 rounded-2xl bg-white/6 p-4 ring-1 ring-white/10">
+                <svg viewBox="0 0 20 20" className="mt-0.5 size-5 shrink-0 text-glow" aria-hidden="true">
+                  <path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 border-l-2 border-accent pl-4 text-mist">{note}</p>
+        </div>
       </div>
     </section>
   );

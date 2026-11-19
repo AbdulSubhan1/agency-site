@@ -2,15 +2,14 @@
 // work or what we build; nothing here claims a client, a result or a number we can't show. "Selected work" and
 // "Insights" wait until there are real projects and articles to put in them.
 
-export type Capability = {
-  id: string;
-  name: string;
-  outcome: string;
-  deliverables: string;
-  icon: "code" | "web" | "mobile" | "design" | "ai" | "flow" | "plug" | "cloud";
-};
+import type { Capability } from "./capability";
+import type { FlowStory, GraphVisual } from "./examples";
 
 export const DEVXONIC_HOME = {
+  graph: {
+    hub: "Your product",
+    nodes: ["Web app", "Mobile app", "APIs", "Database", "AI models", "Cloud"],
+  } satisfies GraphVisual,
   /** Short system events for the hero graph's toasts: a picture of software at work, not results from a client. */
   heroEvents: ["Tests passed", "Release deployed", "Orders synced to the CRM", "Nightly backup complete"],
   proof: {
@@ -125,6 +124,29 @@ export const DEVXONIC_HOME = {
       { name: "Testing", tools: ["Playwright", "Vitest"] },
     ],
   },
+  story: {
+    title: "How one order moves",
+    who: "Example: an online clothing store, about 60 cash-on-delivery orders a day",
+    steps: [
+      {
+        label: "Order arrives on WhatsApp",
+        before: "Waits up to 3 hours for a reply",
+        after: "Answered in a minute",
+      },
+      {
+        label: "Typed into a spreadsheet",
+        before: "2 hours a day, with typos",
+        after: "Lands in the sheet by itself",
+      },
+      {
+        label: "Customer called to confirm",
+        before: "1 in 5 orders turns out fake",
+        after: "Confirmed on WhatsApp first",
+      },
+      { label: "Courier booked", before: "Fake orders go out too", after: "Only real orders go out" },
+    ],
+    after: "Your team only handles the orders that need a person.",
+  } satisfies FlowStory,
   values: {
     title: "Software is more than a launch",
     items: [

@@ -51,33 +51,4 @@ export type Brand = {
     /** Body and interface face. */
     text: "inter" | "manrope";
   };
-  /** The worked examples the home page animates. Businesses and numbers are made up and labelled as examples. */
-  showcase: Showcase;
-};
-
-export type Showcase = {
-  /** Hero visual: the parts of a system joined to the middle, with work flowing between them. */
-  hero: { kind: "graph"; hub: string; nodes: string[] };
-  /** One evening at an example business, as a live feed. */
-  feed: { title: string; rows: { time: string; event: string; result: string }[]; done: string };
-  /** Where the hours go, before and after: a workday bar or one order's steps. */
-  story: DayStory | FlowStory;
-};
-
-export type DayStory = {
-  kind: "day";
-  title: string;
-  who: string;
-  tasks: { label: string; minutes: number }[];
-  /** Minutes the same tasks take once automated. */
-  afterMinutes: number;
-  after: string;
-};
-
-export type FlowStory = {
-  kind: "flow";
-  title: string;
-  who: string;
-  steps: { label: string; before: string; after: string }[];
-  after: string;
 };

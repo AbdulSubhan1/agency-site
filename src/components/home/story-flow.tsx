@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import type { FlowStory } from "@/brands/types";
+import type { FlowStory } from "@/content/examples";
 import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
 
 /**

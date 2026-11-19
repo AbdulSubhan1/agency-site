@@ -3,15 +3,16 @@ import type { Brand } from "./types";
 export const us: Brand = {
   id: "us",
   name: "Radianzest",
-  positioning: "We help US businesses streamline their processes with AI: fixed scope, fixed price, live in weeks.",
-  tagline: "AI automation for your business",
-  tone: "Direct and outcome first. Short sentences, real numbers, no hype. Say what it costs and how long it takes.",
+  positioning:
+    "We build brands, digital experiences and growth systems that help US businesses get discovered, win trust and convert demand.",
+  tagline: "Web design, branding and digital growth",
+  tone: "Bold, creative and approachable, focused on growth. Say what it costs and what it changes; no hype, no guarantees. US English.",
   hero: {
-    headline: "Streamline your business with AI, without hiring an AI team",
+    headline: "Create attention. Earn trust. Build momentum.",
     subline:
-      "We find the work that slows you down, automate it and hand you the keys. Fixed scope, fixed price, and you own everything we build.",
-    primary: { label: "Book a free 20-minute call", kind: "book-call" },
-    secondary: { label: "See what we automate", kind: "enquiry" },
+      "We unite websites, brand identity, search visibility and marketing technology into digital experiences designed to move US businesses forward.",
+    primary: { label: "Start a project", kind: "book-call" },
+    secondary: { label: "See what we do", kind: "enquiry", href: "#services" },
   },
   close: {
     headline: "Ready to make your digital presence work harder?",
@@ -48,47 +49,5 @@ export const us: Brand = {
     ink: "#241a33",
     display: "sora",
     text: "manrope",
-  },
-  showcase: {
-    hero: {
-      kind: "graph",
-      hub: "Your business",
-      nodes: ["Missed calls", "Web forms", "CRM", "Invoices", "Calendar", "Email"],
-    },
-    feed: {
-      title: "Example: a home services company, Tuesday evening",
-      rows: [
-        {
-          time: "6:12 pm",
-          event: "Missed call from a new customer while the team was on a job",
-          result: "Texted back in 38 seconds",
-        },
-        {
-          time: "6:20 pm",
-          event: "Web form: “AC not cooling, can someone come tomorrow?”",
-          result: "Booked Wed 9:00 am, added to the CRM",
-        },
-        { time: "7:05 pm", event: "Invoice #2214 paid by card", result: "Matched in QuickBooks, receipt sent" },
-        {
-          time: "9:40 pm",
-          event: "Quote follow-up due for 3 customers",
-          result: "Reminders sent, 1 reply waiting for you",
-        },
-      ],
-      done: "Done tonight without anyone at a desk",
-    },
-    story: {
-      kind: "day",
-      title: "Where an office manager's day goes",
-      who: "Example: a 12-person company",
-      tasks: [
-        { label: "Answering the same questions", minutes: 100 },
-        { label: "Copying leads into the CRM", minutes: 55 },
-        { label: "Chasing unpaid invoices", minutes: 50 },
-        { label: "Writing quotes by hand", minutes: 70 },
-      ],
-      afterMinutes: 20,
-      after: "The repeat work runs by itself, and the day goes back to the work you're paid for.",
-    },
   },
 };

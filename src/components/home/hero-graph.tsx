@@ -15,7 +15,15 @@ const pill = (label: string) => label.length * 8.6 + 46;
  * The business in the middle, its apps around it, and work flowing between them as moving light. A toast cycles
  * through what just got done.
  */
-export function HeroGraph({ hub, nodes, results }: { hub: string; nodes: string[]; results: string[] }) {
+export function HeroGraph({
+  hub,
+  nodes,
+  results,
+}: {
+  hub: string;
+  nodes: readonly string[];
+  results: readonly string[];
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const points = nodes.map((label, i) => {
     const a = (i / nodes.length) * Math.PI * 2 - Math.PI / 2;
